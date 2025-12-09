@@ -14,6 +14,8 @@ $widget-prefix: 'rvx' !default; //##
 $live-mode-class: '#{$widget-prefix}-live-mode' !default; //##
 $live-mode-min-class: '#{$widget-prefix}-live-mode--minimized' !default; //##
 $maximized-class: '#{$widget-prefix}-maximized' !default; //##
+$layout-left-class: '#{$widget-prefix}-layout-left' !default; //##
+$no-toolbar-class: '#{$widget-prefix}-no-toolbar' !default; //##
 $mobile-class: 'mobile' !default; //##
 $touch-only-class: 'touch-only' !default; //##
 

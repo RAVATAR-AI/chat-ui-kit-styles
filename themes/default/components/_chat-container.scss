@@ -67,12 +67,30 @@
   }
 }
 
-.#{$live-mode-class}.#{$maximized-class}.rvx-layout-left {
+.#{$live-mode-class}.#{$maximized-class}.#{$layout-left-class} {
   .#{$prefix}-chat-container {
     grid-template-areas:
       'header header'
       'message-list stream'
       'message-input stream';
     grid-template-columns: 1fr 3fr;
+  }
+}
+
+// Grid layout when toolbar is hidden (no header row)
+.#{$live-mode-class}.#{$maximized-class}.#{$no-toolbar-class} {
+  .#{$prefix}-chat-container {
+    grid-template-areas:
+      'stream message-list'
+      'stream message-input';
+    grid-template-rows: 1fr auto;
+  }
+}
+
+.#{$live-mode-class}.#{$maximized-class}.#{$layout-left-class}.#{$no-toolbar-class} {
+  .#{$prefix}-chat-container {
+    grid-template-areas:
+      'message-list stream'
+      'message-input stream';
   }
 }
