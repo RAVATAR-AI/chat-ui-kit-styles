@@ -6,6 +6,7 @@
   $message-input-class: &;
 
   @include flex-row;
+  position: relative;
   background-color: $message-input-bg-color;
   overflow: visible;
 
@@ -108,7 +109,10 @@
 
     &__tools {
       .#{$widget-prefix}-button__send {
-        bottom: 2.5em;
+        top: 50%;
+        transform: translateY(-50%) translateX(-5%);
+        bottom: auto;
+        margin: 0 0.2em 0 -4em;
       }
     }
   }
@@ -160,6 +164,7 @@
         border-radius: 50%;
         bottom: 1em;
         margin: 0.5em 0.5em 0 -3.7em;
+        padding-top: 0.3125em;
 
         display: flex;
         justify-content: center;
