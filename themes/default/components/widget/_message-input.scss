@@ -194,3 +194,65 @@
     }
   }
 }
+
+// Fullpage live mode — floating mic button overlay rendered outside ChatContainer
+.#{$live-mode-fullpage-class} {
+  .#{$widget-prefix}-fullpage-mic-overlay {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    pointer-events: none;
+    padding-right: 0.75em;
+
+    .#{$widget-prefix}-message-input {
+      background: transparent;
+      padding: 0;
+      margin: 0;
+
+      .#{$prefix}-message-input {
+        display: none;
+      }
+
+      &__tools {
+        pointer-events: auto;
+
+        .#{$widget-prefix}-button__send {
+          background: rgba(36, 38, 44, 0.38);
+          color: white;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          position: relative;
+          margin: 0;
+          bottom: auto;
+          top: auto;
+          transform: none;
+          pointer-events: auto;
+          transition: background-color 0.15s ease;
+          padding-top: 2px;
+          padding-right: 1px;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &:hover:not(:disabled),
+          &.#{$prefix}-button:hover:not(:disabled) {
+            color: white;
+            background-color: rgba(36, 38, 44, 0.6);
+          }
+
+          svg {
+            transform: scale(0.9165);
+            transform-origin: center;
+          }
+        }
+      }
+    }
+  }
+}
