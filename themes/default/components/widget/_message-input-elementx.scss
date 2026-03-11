@@ -1,0 +1,83 @@
+@import '../../variables';
+@import '../../helpers/mixins';
+
+// ElementX mode message input styles
+// Scoped under .elementx-root to avoid affecting other modes
+// Transforms the default message input into a glass pill-shaped input bar
+
+.elementx-root {
+
+  .#{$widget-prefix}-message-input {
+    @include flex-row;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+    background: transparent;
+    padding: 0;
+    overflow: visible;
+
+    .#{$prefix}-message-input {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      min-height: unset;
+      height: auto;
+      padding: 0.4em 0.625em;
+
+      &__content-editor-wrapper {
+        background: transparent;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+      }
+
+      &__content-editor-container {
+        background: transparent;
+        background-color: transparent;
+        border: none;
+        min-height: unset;
+        max-height: 60px;
+      }
+
+      &__content-editor {
+        background: transparent;
+        background-color: transparent;
+        border: none;
+        min-height: 24px;
+        padding-right: 48px;
+        cursor: text;
+      }
+
+      // Scrollbar before send icon
+      &__content-editor-container .ps__rail-y {
+        right: 40px;
+      }
+    }
+
+    &__tools {
+      @include flex-row;
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      align-items: center;
+      justify-content: center;
+
+      .#{$widget-prefix}-button__send {
+        position: static;
+        width: 36px;
+        height: 36px;
+        margin: 0;
+        bottom: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+      }
+    }
+  }
+}
