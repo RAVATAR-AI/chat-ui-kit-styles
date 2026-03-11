@@ -94,3 +94,11 @@
       'message-input stream';
   }
 }
+
+// Fullpage live mode — no grid, just stream filling the container
+.#{$live-mode-class}.#{$maximized-class}.#{$live-mode-fullpage-class} {
+  .#{$prefix}-chat-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
