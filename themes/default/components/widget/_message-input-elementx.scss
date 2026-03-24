@@ -46,7 +46,7 @@
         background: transparent;
         background-color: transparent;
         border: none;
-        min-height: 24px;
+        min-height: unset;
         padding-right: 48px;
         cursor: text;
       }
@@ -72,6 +72,7 @@
         width: 36px;
         height: 36px;
         margin: 0;
+        padding-top: 0;
         bottom: auto;
         display: flex;
         align-items: center;
