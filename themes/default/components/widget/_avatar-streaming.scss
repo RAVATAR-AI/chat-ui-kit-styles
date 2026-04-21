@@ -82,6 +82,16 @@
     text-align: center;
   }
 
+  &-error-learn-more {
+    color: var(--light-white);
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--light-white);
+      opacity: 0.8;
+    }
+  }
+
   &-reconnect-button.rv-button {
     background-color: var(--light-gray1);
     border: 1px solid var(--light-white);
