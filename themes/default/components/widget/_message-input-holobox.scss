@@ -1,0 +1,134 @@
+@import '../../variables';
+@import '../../helpers/mixins';
+
+// Holobox mode message input styles
+// Scoped under .holobox-root to avoid affecting other modes
+// Overrides base chatscope styles for the glass pill input bar
+
+.holobox-root {
+
+  .#{$widget-prefix}-message-input {
+    @include flex-row;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+    background: transparent;
+    padding: 0;
+    overflow: visible;
+
+    .#{$prefix}-message-input {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      min-height: unset;
+      height: auto;
+      padding: 0.4em 0.625em;
+
+      &__content-editor-wrapper {
+        background: transparent;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+      }
+
+      &__content-editor-container {
+        background: transparent;
+        background-color: transparent;
+        border: none;
+        min-height: unset;
+        max-height: 60px;
+      }
+
+      &__content-editor {
+        background: transparent;
+        background-color: transparent;
+        border: none;
+        min-height: unset;
+        padding-right: 8px;
+        cursor: text;
+      }
+
+      // Scrollbar before send icon
+      &__content-editor-container .ps__rail-y {
+        right: 40px;
+      }
+    }
+
+    &__tools {
+      @include flex-row;
+      position: relative;
+      z-index: 2;
+      align-items: center;
+      justify-content: center;
+      padding-right: 4px;
+
+      .#{$widget-prefix}-button__send {
+        position: static;
+        width: 36px;
+        height: 36px;
+        margin: 0;
+        padding-top: 0;
+        bottom: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+// Prevent live-mode / maximized SCSS overrides from leaking into holobox
+.#{$live-mode-class}.#{$maximized-class} .holobox-root,
+.#{$live-mode-class}.#{$live-mode-min-class} .holobox-root,
+.#{$live-mode-fullpage-class} .holobox-root {
+
+  .#{$widget-prefix}-message-input {
+    padding: 10px 5px;
+    position: relative;
+    bottom: auto;
+    right: auto;
+
+    .#{$prefix}-message-input {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+
+      &__content-editor-wrapper {
+        background: transparent;
+        margin-right: 0;
+      }
+
+      &__content-editor-container {
+        min-width: unset;
+        max-width: unset;
+        min-height: unset;
+        max-height: 60px;
+        border-radius: 0;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+      }
+
+      &__content-editor {
+        background: transparent;
+        color: inherit;
+      }
+    }
+
+    &__tools {
+      .#{$widget-prefix}-button__send {
+        position: static;
+        width: 36px;
+        height: 36px;
+        margin: 0;
+        bottom: auto;
+        top: auto;
+        transform: none;
+      }
+    }
+  }
+}
